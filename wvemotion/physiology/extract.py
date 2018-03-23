@@ -262,6 +262,7 @@ def extract_all_file_divide(source_folder_path, des_folder_path, signals_type,
 #     #                         ['ECG', 'EDA'], start_index=2)  # task test
 #     # test = extract_single_type_narray(
 #     #       './data/test/source/Tie_movie_intro_Zombie.txt', 2) # task test
-#     # test = extract_multiple_type_narray(
-#     #     './data/test/source/Tie_movie_intro_Zombie.txt', 2, 2) # task test
-#     # print(test)
+    # test = extract_multiple_type_narray(
+    #     './data/test/source/filter/cut/PEYI.txt', 1, 2) # task test
+    # print(test[0])
+    # print(test[1])
