@@ -1,0 +1,54 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "consoleFormatter": {
+            "class": "logging.Formatter",
+            "format": "%(asctime)s [line:%(lineno)d] [%(levelname)s]: %(message)s"
+        },
+        "fileFormatter": {
+            "class": "logging.Formatter",
+            "format": "%(asctime)s [line:%(lineno)d] [%(levelname)s]: %(message)s"
+        }
+    },
+    "handlers": {
+        "consoleHandler": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "consoleFormatter",
+            "stream": "ext://sys.stdout"
+        },
+        "ExperimentHandler": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "fileFormatter",
+            "filename": "./logs/experiment.log",
+            "mode": "a",
+            "encoding": "utf-8"
+        },
+        "AnswerHandler": {
+            "class": "logging.FileHandler",
+            "level": "INFO",
+            "formatter": "fileFormatter",
+            "filename": "./logs/answer.log",
+            "mode": "a",
+            "encoding": "utf-8"
+        }
+    },
+    "loggers": {
+        "consoleLogger": {
+            "level": "INFO",
+            "handlers": ["consoleHandler"]
+        },
+        "ExperimentLogger": {
+            "level": "DEBUG",
+            "handlers": ["ExperimentHandler"],
+            "qualname": "ExperimentLogger"
+        },
+        "AnswerLogger": {
+            "level": "INFO",
+            "handlers": ["AnswerHandler"],
+            "qualname": "AnswerLogger"
+        }
+    }
+}
